@@ -1,8 +1,12 @@
 package com.consciousprogrammers.springbootrecipeapp.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Set;
 
+@Data
+@EqualsAndHashCode(exclude = {"recipes"})
 @Entity
 public class Category {
 
@@ -14,27 +18,7 @@ public class Category {
     private String description;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Recipe> recipe;
+    private Set<Recipe> recipes;
 
 
-    public Long getId() {
-        return id;
-    }
-
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<Recipe> getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Set<Recipe> recipe) {
-        this.recipe = recipe;
-    }
 }

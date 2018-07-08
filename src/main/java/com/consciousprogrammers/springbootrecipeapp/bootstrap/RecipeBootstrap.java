@@ -4,9 +4,11 @@ import com.consciousprogrammers.springbootrecipeapp.model.*;
 import com.consciousprogrammers.springbootrecipeapp.repositories.CategoryRepository;
 import com.consciousprogrammers.springbootrecipeapp.repositories.RecipeRepository;
 import com.consciousprogrammers.springbootrecipeapp.repositories.UnitOfMessureRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.xml.soap.Node;
 import java.math.BigDecimal;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -25,6 +28,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
 
     public RecipeBootstrap(RecipeRepository recipeRepository, CategoryRepository categoryRepository, UnitOfMessureRepository unitOfMessureRepository) {
+
+
+
         this.recipeRepository = recipeRepository;
         this.categoryRepository = categoryRepository;
         this.unitOfMessureRepository = unitOfMessureRepository;
@@ -33,6 +39,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
 
     private List<Recipe> getRecipes(){
+
+
+        log.debug("getRecipes()-> start");
 
 
         List<Recipe> recipes = new ArrayList<>();
@@ -126,6 +135,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         recipes.add(thirtyMinuteChickenParmigianaBake);
 
+        log.debug("getRecipes()-> end");
+
         return recipes;
 
 
@@ -134,7 +145,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     }
 
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         recipeRepository.saveAll(getRecipes());
+        log.debug("Loading bootstrap data");
     }
 }
