@@ -105,21 +105,20 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "\n" +
                 "We used a tub of antipasto chargrilled eggplant that's already diced. You could use 200g chargrilled eggplant from the supermarket deli, diced, instead.");
 
-        pamaNotes.setRecipe(thirtyMinuteChickenParmigianaBake);
         thirtyMinuteChickenParmigianaBake.setNotes(pamaNotes);
 
 
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("olive oil",new BigDecimal(1.5),tablespoon,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("chicken breast schnitzels (uncrumbed)",new BigDecimal(700),grams,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("medium brown onion, chopped",new BigDecimal(1),each,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("garlic cloves, crushed",new BigDecimal(2),each,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("jar fire-roasted pepper strips, drained",new BigDecimal(340),grams,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("tub diced antipasto chargrilled eggplant, drained (see note)",new BigDecimal(230),grams,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("cups tomato pasta sauce",new BigDecimal(1.5),cup,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("Fountain Spicy Red sauce",new BigDecimal(1/3),cup,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("cup fresh basil leaves, torn",new BigDecimal(1/4),grams,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("fresh breadcrumbs",new BigDecimal(1/3),cup,thirtyMinuteChickenParmigianaBake));
-        thirtyMinuteChickenParmigianaBake.getIngredients().add(new Ingredient("Basil leaves",new BigDecimal(0),tablespoon,thirtyMinuteChickenParmigianaBake));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("olive oil",new BigDecimal(1.5),tablespoon));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("chicken breast schnitzels (uncrumbed)",new BigDecimal(700),grams));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("medium brown onion, chopped",new BigDecimal(1),each));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("garlic cloves, crushed",new BigDecimal(2),each));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("jar fire-roasted pepper strips, drained",new BigDecimal(340),grams));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("tub diced antipasto chargrilled eggplant, drained (see note)",new BigDecimal(230),grams));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("cups tomato pasta sauce",new BigDecimal(1.5),cup));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("Fountain Spicy Red sauce",new BigDecimal(1/3),cup));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("cup fresh basil leaves, torn",new BigDecimal(1/4),grams));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("fresh breadcrumbs",new BigDecimal(1/3),cup));
+        thirtyMinuteChickenParmigianaBake.addIngredient(new Ingredient("Basil leaves",new BigDecimal(0),tablespoon));
 
         thirtyMinuteChickenParmigianaBake.getCategories().add(mexican);
         thirtyMinuteChickenParmigianaBake.getCategories().add(australian);
