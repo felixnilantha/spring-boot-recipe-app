@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -20,13 +21,16 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Set<Recipe> getRecipes() {
+    public List<Recipe> getRecipes() {
 
-        Set<Recipe> recipes =new HashSet<>();
 
         log.debug("Start");
 
-        recipeRepository.findAll().iterator().forEachRemaining(recipes::add);
+        //recipeRepository.findAll().iterator().forEachRemaining(recipes::add);
+
+
+        List<Recipe>  recipes = recipeRepository.findAll();
+
 
         log.debug("end");
 
