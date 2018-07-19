@@ -1,7 +1,5 @@
 package com.consciousprogrammers.springbootrecipeapp.controller;
 
-import com.consciousprogrammers.springbootrecipeapp.repositories.CategoryRepository;
-import com.consciousprogrammers.springbootrecipeapp.repositories.UnitOfMessureRepository;
 import com.consciousprogrammers.springbootrecipeapp.service.RecipeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
 package com.consciousprogrammers.springbootrecipeapp.repositories;
 
-import com.consciousprogrammers.springbootrecipeapp.model.UnitOfMessure;
+import com.consciousprogrammers.springbootrecipeapp.model.UnitOfMeasure;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,14 +10,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class UnitOfMessureRepositoryIT {
 
     @Autowired
-    UnitOfMessureRepository unitOfMessureRepository;
+    UnitOfMeasureRepository unitOfMeasureRepository;
 
     @Before
     public void setUp() throws Exception {
@@ -26,8 +26,8 @@ public class UnitOfMessureRepositoryIT {
     @Test
     public void findByUnitOfMessure() {
 
-        Optional<UnitOfMessure> unitOfMessureOptional = unitOfMessureRepository.findByUnitOfMessure("cup");
+        Optional<UnitOfMeasure> unitOfMeasureOptional = unitOfMeasureRepository.findByUnitOfMessure("cup");
 
-        assertEquals("cup",unitOfMessureOptional.get().getUnitOfMessure());
+        assertEquals("cup",unitOfMeasureOptional.get().getUnitOfMeasure());
     }
 }

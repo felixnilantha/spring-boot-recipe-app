@@ -3,14 +3,13 @@ package com.consciousprogrammers.springbootrecipeapp.bootstrap;
 import com.consciousprogrammers.springbootrecipeapp.model.*;
 import com.consciousprogrammers.springbootrecipeapp.repositories.CategoryRepository;
 import com.consciousprogrammers.springbootrecipeapp.repositories.RecipeRepository;
-import com.consciousprogrammers.springbootrecipeapp.repositories.UnitOfMessureRepository;
+import com.consciousprogrammers.springbootrecipeapp.repositories.UnitOfMeasureRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.xml.soap.Node;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +23,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
     private CategoryRepository categoryRepository;
 
-    private UnitOfMessureRepository unitOfMessureRepository;
+    private UnitOfMeasureRepository unitOfMessureRepository;
 
 
-    public RecipeBootstrap(RecipeRepository recipeRepository, CategoryRepository categoryRepository, UnitOfMessureRepository unitOfMessureRepository) {
+    public RecipeBootstrap(RecipeRepository recipeRepository, CategoryRepository categoryRepository, UnitOfMeasureRepository unitOfMessureRepository) {
 
 
 
@@ -47,25 +46,25 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         List<Recipe> recipes = new ArrayList<>();
 
 
-        Optional<UnitOfMessure> teaspoonOptional =unitOfMessureRepository.findByUnitOfMessure("teaspoon");
-        Optional<UnitOfMessure> tablespoonOptional =unitOfMessureRepository.findByUnitOfMessure("tablespoon");
-        Optional<UnitOfMessure> eachOptional =unitOfMessureRepository.findByUnitOfMessure("each");
-        Optional<UnitOfMessure> pintOptional =unitOfMessureRepository.findByUnitOfMessure("pint");
-        Optional<UnitOfMessure> cupOptional =unitOfMessureRepository.findByUnitOfMessure("cup");
-        Optional<UnitOfMessure> pinchOptional =unitOfMessureRepository.findByUnitOfMessure("pinch");
-        Optional<UnitOfMessure> gramsOptional =unitOfMessureRepository.findByUnitOfMessure("grams");
-        Optional<UnitOfMessure> ounceOptional =unitOfMessureRepository.findByUnitOfMessure("ounce");
-        Optional<UnitOfMessure> toServeOptional =unitOfMessureRepository.findByUnitOfMessure("to serve");
+        Optional<UnitOfMeasure> teaspoonOptional =unitOfMessureRepository.findByUnitOfMessure("teaspoon");
+        Optional<UnitOfMeasure> tablespoonOptional =unitOfMessureRepository.findByUnitOfMessure("tablespoon");
+        Optional<UnitOfMeasure> eachOptional =unitOfMessureRepository.findByUnitOfMessure("each");
+        Optional<UnitOfMeasure> pintOptional =unitOfMessureRepository.findByUnitOfMessure("pint");
+        Optional<UnitOfMeasure> cupOptional =unitOfMessureRepository.findByUnitOfMessure("cup");
+        Optional<UnitOfMeasure> pinchOptional =unitOfMessureRepository.findByUnitOfMessure("pinch");
+        Optional<UnitOfMeasure> gramsOptional =unitOfMessureRepository.findByUnitOfMessure("grams");
+        Optional<UnitOfMeasure> ounceOptional =unitOfMessureRepository.findByUnitOfMessure("ounce");
+        Optional<UnitOfMeasure> toServeOptional =unitOfMessureRepository.findByUnitOfMessure("to serve");
 
-        UnitOfMessure teaspoon = teaspoonOptional.get();
-        UnitOfMessure tablespoon = tablespoonOptional.get();
-        UnitOfMessure each = eachOptional.get();
-        UnitOfMessure pint = pintOptional.get();
-        UnitOfMessure cup = cupOptional.get();
-        UnitOfMessure pinch = pinchOptional.get();
-        UnitOfMessure grams =gramsOptional.get();
-        UnitOfMessure ounce = ounceOptional.get();
-        UnitOfMessure toServe = ounceOptional.get();
+        UnitOfMeasure teaspoon = teaspoonOptional.get();
+        UnitOfMeasure tablespoon = tablespoonOptional.get();
+        UnitOfMeasure each = eachOptional.get();
+        UnitOfMeasure pint = pintOptional.get();
+        UnitOfMeasure cup = cupOptional.get();
+        UnitOfMeasure pinch = pinchOptional.get();
+        UnitOfMeasure grams =gramsOptional.get();
+        UnitOfMeasure ounce = ounceOptional.get();
+        UnitOfMeasure toServe = ounceOptional.get();
 
 
 

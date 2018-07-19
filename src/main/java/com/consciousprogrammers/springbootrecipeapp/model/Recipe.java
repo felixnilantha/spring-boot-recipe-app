@@ -37,7 +37,7 @@ public class Recipe {
     private Dificulty dificulty;
 
     /**
-     * Delete Recipe, Delete Notes
+     * Delete RecipeCommand, Delete NotesCommand
      */
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
