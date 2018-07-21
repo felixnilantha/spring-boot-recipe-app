@@ -3,7 +3,9 @@ package com.consciousprogrammers.springbootrecipeapp.converter;
 import com.consciousprogrammers.springbootrecipeapp.command.UnitOfMeasureCommand;
 import com.consciousprogrammers.springbootrecipeapp.model.UnitOfMeasure;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UnitOfMeasureToUnitOfMeasureCommand implements Converter<UnitOfMeasure, UnitOfMeasureCommand> {
     @Override
     public UnitOfMeasureCommand convert(UnitOfMeasure unitOfMeasure) {

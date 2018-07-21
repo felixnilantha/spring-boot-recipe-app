@@ -23,16 +23,16 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
     private CategoryRepository categoryRepository;
 
-    private UnitOfMeasureRepository unitOfMessureRepository;
+    private UnitOfMeasureRepository unitOfMeasureRepository;
 
 
-    public RecipeBootstrap(RecipeRepository recipeRepository, CategoryRepository categoryRepository, UnitOfMeasureRepository unitOfMessureRepository) {
+    public RecipeBootstrap(RecipeRepository recipeRepository, CategoryRepository categoryRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
 
 
 
         this.recipeRepository = recipeRepository;
         this.categoryRepository = categoryRepository;
-        this.unitOfMessureRepository = unitOfMessureRepository;
+        this.unitOfMeasureRepository = unitOfMeasureRepository;
     }
 
 
@@ -46,15 +46,15 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         List<Recipe> recipes = new ArrayList<>();
 
 
-        Optional<UnitOfMeasure> teaspoonOptional =unitOfMessureRepository.findByUnitOfMessure("teaspoon");
-        Optional<UnitOfMeasure> tablespoonOptional =unitOfMessureRepository.findByUnitOfMessure("tablespoon");
-        Optional<UnitOfMeasure> eachOptional =unitOfMessureRepository.findByUnitOfMessure("each");
-        Optional<UnitOfMeasure> pintOptional =unitOfMessureRepository.findByUnitOfMessure("pint");
-        Optional<UnitOfMeasure> cupOptional =unitOfMessureRepository.findByUnitOfMessure("cup");
-        Optional<UnitOfMeasure> pinchOptional =unitOfMessureRepository.findByUnitOfMessure("pinch");
-        Optional<UnitOfMeasure> gramsOptional =unitOfMessureRepository.findByUnitOfMessure("grams");
-        Optional<UnitOfMeasure> ounceOptional =unitOfMessureRepository.findByUnitOfMessure("ounce");
-        Optional<UnitOfMeasure> toServeOptional =unitOfMessureRepository.findByUnitOfMessure("to serve");
+        Optional<UnitOfMeasure> teaspoonOptional =unitOfMeasureRepository.findByUnitOfMeasure("teaspoon");
+        Optional<UnitOfMeasure> tablespoonOptional =unitOfMeasureRepository.findByUnitOfMeasure("tablespoon");
+        Optional<UnitOfMeasure> eachOptional =unitOfMeasureRepository.findByUnitOfMeasure("each");
+        Optional<UnitOfMeasure> pintOptional =unitOfMeasureRepository.findByUnitOfMeasure("pint");
+        Optional<UnitOfMeasure> cupOptional =unitOfMeasureRepository.findByUnitOfMeasure("cup");
+        Optional<UnitOfMeasure> pinchOptional =unitOfMeasureRepository.findByUnitOfMeasure("pinch");
+        Optional<UnitOfMeasure> gramsOptional =unitOfMeasureRepository.findByUnitOfMeasure("grams");
+        Optional<UnitOfMeasure> ounceOptional =unitOfMeasureRepository.findByUnitOfMeasure("ounce");
+        Optional<UnitOfMeasure> toServeOptional =unitOfMeasureRepository.findByUnitOfMeasure("to serve");
 
         UnitOfMeasure teaspoon = teaspoonOptional.get();
         UnitOfMeasure tablespoon = tablespoonOptional.get();
@@ -64,7 +64,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         UnitOfMeasure pinch = pinchOptional.get();
         UnitOfMeasure grams =gramsOptional.get();
         UnitOfMeasure ounce = ounceOptional.get();
-        UnitOfMeasure toServe = ounceOptional.get();
+        UnitOfMeasure toServe = toServeOptional.get();
+
 
 
 
