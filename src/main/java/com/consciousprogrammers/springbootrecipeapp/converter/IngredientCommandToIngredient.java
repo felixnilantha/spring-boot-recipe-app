@@ -28,6 +28,6 @@ public class IngredientCommandToIngredient implements Converter<IngredientComman
         ingredient.setDescription(ingredientCommand.getDescription());
         ingredient.setUom(unitOfMeasureConverter.convert(ingredientCommand.getUom()));
 
-        return null;
+        return ingredient;
     }
 }

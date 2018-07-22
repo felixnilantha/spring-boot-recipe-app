@@ -42,6 +42,7 @@ public class RecipeCommandToRecipe implements Converter<RecipeCommand, Recipe> {
         recipe.setServings(recipeCommand.getServings());
         recipe.setCookTime(recipeCommand.getCookTime());
         recipe.setPrepTime(recipeCommand.getPrepTime());
+        recipe.setSource(recipeCommand.getSource());
         recipe.setUrl(recipeCommand.getUrl());
         recipe.setNotes(noteConverter.convert(recipeCommand.getNotes()));
 
@@ -68,6 +69,6 @@ public class RecipeCommandToRecipe implements Converter<RecipeCommand, Recipe> {
         }
 
 
-        return null;
+        return recipe;
     }
 }
