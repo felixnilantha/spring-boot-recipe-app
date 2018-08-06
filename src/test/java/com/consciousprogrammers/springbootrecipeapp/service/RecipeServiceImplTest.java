@@ -1,8 +1,11 @@
 package com.consciousprogrammers.springbootrecipeapp.service;
 
+import com.consciousprogrammers.springbootrecipeapp.converter.RecipeCommandToRecipe;
+import com.consciousprogrammers.springbootrecipeapp.converter.RecipeToRecipeCommand;
 import com.consciousprogrammers.springbootrecipeapp.model.Recipe;
 import com.consciousprogrammers.springbootrecipeapp.repositories.RecipeRepository;
 import javafx.beans.binding.When;
+import lombok.NonNull;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -22,13 +25,17 @@ public class RecipeServiceImplTest {
 
     @Mock
     RecipeRepository recipeRepository;
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
 
 
     @Before
     public void setUp() throws Exception {
 
         MockitoAnnotations.initMocks(this);
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
 
     }
 
@@ -44,7 +51,7 @@ public class RecipeServiceImplTest {
         Recipe recipeById = recipeService.findById(1L);
 
 
-        assertNotNull("return null value for recipe",recipeById);
+        assertNotNull("return null value for recipe", recipeById);
         verify(recipeRepository, times(1)).findById(anyLong());
         verify(recipeRepository, never()).findAll();
 
